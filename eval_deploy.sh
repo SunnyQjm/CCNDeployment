@@ -15,8 +15,7 @@ function deploy(){
     # 首先删除CCNController和CCNRouter进程
     kill `ps -aux | grep CCNController-1.0.jar | awk '{print $2}'`
     kill `ps -aux | grep CCNRouter-1.0.jar | awk '{print $2}'`
-    
-    ./execBashOnServer.sh $username $password $ip
+    ./execBashOnServer.sh $username $password $ip $routerName
 }
 
 
@@ -33,7 +32,7 @@ length=$(( $length - 1 ))
 for index in `seq 0 $length`
 do
     # 获取到路由的名字
-    routerName=$(echo $list | jq ".[$index].name")
+    routerName=$(echo $list | jq -r ".[$index].name")
     serverName=$(echo $routerName)
     temp_1=${serverName#*router/}
     body=${temp_1%%/*}
