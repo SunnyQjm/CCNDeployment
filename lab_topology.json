@@ -1,0 +1,242 @@
+[
+  {
+    "name": "/router/pku/n1",
+    "id": 0,
+    "ip": "219.223.194.46",
+    "controllerListenPort": 19701,
+    "routerListenControllerPort": 19702,
+    "routerListenRouterPort": 19703,
+    "username": "pkun1",
+    "password": "26035354",
+    "nbs": [
+      "/router/pku/n3",
+      "/router/pku/n2",
+      "/router/main/n2"
+    ]
+  },
+  {
+    "name": "/router/pku/n2",
+    "id": 1,
+    "ip": "219.223.197.214",
+    "controllerListenPort": 19704,
+    "routerListenControllerPort": 19705,
+    "routerListenRouterPort": 19706,
+    "username": "pkun2",
+    "password": "26035354",
+    "nbs": [
+      "/router/pku/n3",
+      "/router/pku/n1",
+      "/router/hit/n1",
+      "/router/sz/n0"
+    ]
+  },
+  {
+    "name": "/router/pku/n3",
+    "id": 2,
+    "ip": "219.223.196.74",
+    "controllerListenPort": 19707,
+    "routerListenControllerPort": 19708,
+    "routerListenRouterPort": 19709,
+    "username": "pkun3",
+    "password": "26035354",
+    "nbs": [
+      "/router/pku/n1",
+      "/router/pku/n2"
+    ]
+  },
+  {
+    "name": "/router/hit/n1",
+    "id": 3,
+    "ip": "219.223.197.216",
+    "controllerListenPort": 19710,
+    "routerListenControllerPort": 19711,
+    "routerListenRouterPort": 19712,
+    "username": "edward",
+    "password": "201202",
+    "nbs": [
+      "/router/pku/n2",
+      "/router/hit/n2",
+      "/router/hit/n3"
+    ]
+  },
+  {
+    "name": "/router/hit/n2",
+    "id": 4,
+    "ip": "219.223.194.160",
+    "controllerListenPort": 19713,
+    "routerListenControllerPort": 19714,
+    "routerListenRouterPort": 19715,
+    "username": "hitn2",
+    "password": "26035354",
+    "nbs": [
+      "/router/hit/n1",
+      "/router/hit/n3",
+      "/router/sz/n2"
+    ]
+  },
+  {
+    "name": "/router/hit/n3",
+    "id": 5,
+    "ip": "219.223.199.158",
+    "controllerListenPort": 19716,
+    "routerListenControllerPort": 19717,
+    "routerListenRouterPort": 19718,
+    "username": "hitn3",
+    "password": "201202",
+    "nbs": [
+      "/router/hit/n1",
+      "/router/hit/n2"
+    ]
+  },
+  {
+    "name": "/router/sz/n0",
+    "id": 6,
+    "ip": "219.223.197.204",
+    "controllerListenPort": 19719,
+    "routerListenControllerPort": 19720,
+    "routerListenRouterPort": 19721,
+    "username": "node0",
+    "password": "xuruiedward",
+    "nbs": [
+      "/router/pku/n2",
+      "/router/main/n2",
+      "/router/sz/n1",
+      "/router/sz/n2"
+    ]
+  },
+  {
+    "name": "/router/sz/n1",
+    "id": 7,
+    "ip": "219.223.199.165",
+    "controllerListenPort": 19722,
+    "routerListenControllerPort": 19723,
+    "routerListenRouterPort": 19724,
+    "username": "node1edward",
+    "password": "xuruiedward",
+    "nbs": [
+      "/router/sz/n0",
+      "/router/sz/n3",
+      "/router/sz/n5"
+    ]
+  },
+  {
+    "name": "/router/sz/n2",
+    "id": 8,
+    "ip": "219.223.199.169",
+    "controllerListenPort": 19725,
+    "routerListenControllerPort": 19726,
+    "routerListenRouterPort": 19727,
+    "username": "node3",
+    "password": "xuruiedward",
+    "nbs": [
+      "/router/sz/n3",
+      "/router/sz/n0",
+      "/router/hit/n2",
+      "/router/sz/n6"
+    ]
+  },
+  {
+    "name": "/router/sz/n3",
+    "id": 9,
+    "ip": "219.223.199.166",
+    "controllerListenPort": 19728,
+    "routerListenControllerPort": 19729,
+    "routerListenRouterPort": 19730,
+    "username": "node3edward",
+    "password": "xuruiedward",
+    "nbs": [
+      "/router/sz/n1",
+      "/router/sz/n4",
+      "/router/sz/n2"
+    ]
+  },
+  {
+    "name": "/router/sz/n4",
+    "id": 10,
+    "ip": "219.223.199.163",
+    "controllerListenPort": 19731,
+    "routerListenControllerPort": 19732,
+    "routerListenRouterPort": 19733,
+    "username": "node4edward",
+    "password": "xuruiedward",
+    "nbs": [
+      "/router/sz/n3",
+      "/router/sz/n5",
+      "/router/sz/n6"
+    ]
+  },
+  {
+    "name": "/router/sz/n5",
+    "id": 11,
+    "ip": "219.223.199.167",
+    "controllerListenPort": 19734,
+    "routerListenControllerPort": 19735,
+    "routerListenRouterPort": 19736,
+    "username": "node5",
+    "password": "xuruiedward",
+    "nbs": [
+      "/router/main/n6",
+      "/router/sz/n1",
+      "/router/sz/n4"
+    ]
+  },
+  {
+    "name": "/router/sz/n6",
+    "id": 12,
+    "ip": "219.223.199.168",
+    "controllerListenPort": 19737,
+    "routerListenControllerPort": 19738,
+    "routerListenRouterPort": 19739,
+    "username": "node6",
+    "password": "xuruiedward",
+    "nbs": [
+      "/router/sz/n2",
+      "/router/sz/n4"
+    ]
+  },
+  {
+    "name": "/router/main/n2",
+    "id": 13,
+    "ip": "219.223.193.52",
+    "controllerListenPort": 19740,
+    "routerListenControllerPort": 19741,
+    "routerListenRouterPort": 19742,
+    "username": "mainn2",
+    "password": "26035354",
+    "nbs": [
+      "/router/pku/n1",
+      "/router/sz/n0",
+      "/router/main/n4",
+      "/router/main/n6"
+    ]
+  },
+  {
+    "name": "/router/main/n4",
+    "id": 14,
+    "ip": "219.223.196.143",
+    "controllerListenPort": 19743,
+    "routerListenControllerPort": 19744,
+    "routerListenRouterPort": 19745,
+    "username": "mainn4",
+    "password": "26035354",
+    "nbs": [
+      "/router/main/n6",
+      "/router/main/n2"
+    ]
+  },
+  {
+    "name": "/router/main/n6",
+    "id": 15,
+    "ip": "219.223.196.163",
+    "controllerListenPort": 19746,
+    "routerListenControllerPort": 19747,
+    "routerListenRouterPort": 19748,
+    "username": "mainn2",
+    "password": "26035354",
+    "nbs": [
+      "/router/main/n2",
+      "/router/main/n4",
+      "/router/sz/n5"
+    ]
+  }
+]
