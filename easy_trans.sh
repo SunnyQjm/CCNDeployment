@@ -5,5 +5,5 @@ fileName=$2
 files=$(ls $dir/$fileName*)
 for fn in $files
 do
-    ndnputchunks fn
+    ndnputchunks $fn
 done
