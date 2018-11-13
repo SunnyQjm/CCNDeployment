@@ -1,8 +1,7 @@
 #!/bin/bash
-dir=$1
-fileName=$2
+fileName=$1
 
-files=$(ls $dir/$fileName*)
+files=$(ls ~/Documents/CCNDeployment/xu/$fileName*)
 for fn in $files
 do
     ndnputchunks $fn
