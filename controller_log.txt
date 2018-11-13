@@ -1,3 +1,0 @@
-Picked up _JAVA_OPTIONS:   -Dawt.useSystemAAFontSettings=gasp
-controller started! [/router/pku/n1:19701]
-算法收敛，开始监听
