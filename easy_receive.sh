@@ -5,7 +5,7 @@ num=$2
 for idx in `seq 1 $num`
 do
     #echo $fileName\#\$\#$idx
-    exec ndncutchunks $fileName\#\$\#$idx &
+    exec ndncatchunks $fileName\#\$\#$idx &
 done
 
 wait
