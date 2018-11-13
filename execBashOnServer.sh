@@ -9,14 +9,9 @@ routerName=$4
 
 
 spawn ssh $username@$ip "
-. /etc/profile
-. ~/.bashrc
-java -version
 cd Documents/CCNDeployment;
+rm controller_log.txt
 git pull;
-./controller_deploy.sh $routerName;
-sleep 12;
-./router_deployment.sh $routerName;
 "
 expect {
     "(yes/no)?" {
