@@ -1,5 +1,6 @@
 #!/bin/bash
 
+command=$1
 ##########################################
 ### 具体执行部署到一个节点的操作
 ### @param routerName
@@ -12,10 +13,17 @@ function deploy(){
     username=$2
     password=$3
     ip=$4
-    # 首先删除CCNController和CCNRouter进程
-    kill `ps -aux | grep CCNController-1.0.jar | awk '{print $2}'`
-    kill `ps -aux | grep CCNRouter-1.0.jar | awk '{print $2}'`
-    ./execBashOnServer.sh $username $password $ip $routerName
+    
+    case $command in
+    "update")
+        ./update.sh $username $password $ip $routerName
+        ;;
+    "deploy")
+        ./deploy.sh $username $password $ip $routerName
+        ;;
+    "kill")
+        ./doKill.sh $username $password $ip $routerName
+    esac
 }
 
 
@@ -45,6 +53,6 @@ do
     echo $username
     echo $password
     echo "=======================开始处理$routerName==============="
-    deploy $routerName $username $password $ip
+    deploy $routerName $username $password $ip &
     echo "========================================================="
 done
