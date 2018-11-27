@@ -1,7 +1,21 @@
 #!/bin/bash
 
+DEFAULT_DIR=~/Documents
+function cloneOrUpdate() {
+    cd $DEFAULT_DIR
+    name=$1
+    url=$2
+    if [ -d $name];then
+        cd $name
+        git update
+    else
+        git clone $url
+        cd $name
+    fi
+}
+
 # install nfd use apt
-sudo apt-get install software-properties-common -y
+#sudo apt-get install software-properties-common -y
 #sudo add-apt-repository ppa:named-data/ppa
 #sudo apt update
 #sudo apt-get install nfd -y
@@ -12,36 +26,38 @@ sudo apt-get install doxygen graphviz python-sphinx python-pip -y
 sudo pip install sphinxcontrib-doxylink sphinxcontrib-googleanalytics
 
 # install ndn-cxx
-cd ~/Documents
-git clone https://github.com/named-data/ndn-cxx.git
-cd ndn-cxx
+cloneOrUpdate ndn-cxx https://github.com/named-data/ndn-cxx.git
 ./waf configure --enable-static
 ./waf
 sudo ./waf install
 
+# install nfd
+sudo apt-get install build-essential pkg-config libboost-all-dev \
+                     libsqlite3-dev libssl-dev libpcap-dev -y
+sudo apt-get install doxygen graphviz python-sphinx -y
+cloneOrUpdate NFD https://github.com/named-data/NFD.git
+./waf configure
+./waf
+sudo ./waf install
+
 # install ChronoSync
-cd ~/Documents
-git clone https://github.com/named-data/ChronoSync.git
-cd ChronoSync
+cloneOrUpdate ChronoSync https://github.com/named-data/ChronoSync.git
 ./waf configure
 ./waf
 sudo ./waf install
 
 # install NLSR
-cd ~/Documents
-git clone https://github.com/named-data/NLSR.git
-cd NLSR
+cloneOrUpdate NLSR git clone https://github.com/named-data/NLSR.git
 ./waf configure
 ./waf 
 sudo ./waf install
 
 # install ndn-tools
 sudo apt-get install libpcap-dev -y
-cd ~/Documents
-git clone https://github.com/named-data/ndn-tools.git
-cd ndn-tools
+cloneOrUpdate ndn-tools https://github.com/named-data/ndn-tools.git
 ./waf configure
 ./waf
 sudo ./waf install
+
 # enforce loading lib
 sudo ldconfig
