@@ -2,9 +2,9 @@
 
 # install nfd use apt
 sudo apt-get install software-properties-common -y
-sudo add-apt-repository ppa:named-data/ppa
-sudo apt update
-sudo apt-get install nfd -y
+#sudo add-apt-repository ppa:named-data/ppa
+#sudo apt update
+#sudo apt-get install nfd -y
 
 # install ndn-cxx prerequesites
 sudo apt-get install build-essential libsqlite3-dev libboost-all-dev libssl-dev -y
