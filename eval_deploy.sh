@@ -21,6 +21,9 @@ function deploy(){
     "deploy")
         ./deploy.sh $username $password $ip $routerName
         ;;
+    "nfd_deploy")
+        ./deploy_nfd.sh 
+        ;;
     "kill")
         ./doKill.sh $username $password $ip $routerName
     esac

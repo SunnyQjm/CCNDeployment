@@ -35,5 +35,13 @@ cd NLSR
 ./waf 
 sudo ./waf install
 
+# install ndn-tools
+sudo apt-get install libpcap-dev -y
+cd ~/Documents
+git clone https://github.com/named-data/ndn-tools.git
+cd ndn-tools
+./waf configure
+./waf
+sudo ./waf install
 # enforce loading lib
 sudo ldconfig
