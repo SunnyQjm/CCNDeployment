@@ -5,7 +5,7 @@ function cloneOrUpdate() {
     cd $DEFAULT_DIR
     name=$1
     url=$2
-    if [ -d $name];then
+    if [ -d $name ];then
         cd $name
         git update
     else
