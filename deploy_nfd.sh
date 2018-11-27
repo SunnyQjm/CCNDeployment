@@ -57,7 +57,7 @@ cloneOrUpdate ChronoSync https://github.com/named-data/ChronoSync/archive/$CHRON
 sudo ./waf install
 
 # install NLSR
-cloneOrUpdate NLSR git clone https://github.com/named-data/NLSR/archive/NLSR-$NLSR_VERSION.tar.gz
+cloneOrUpdate NLSR https://github.com/named-data/NLSR/archive/NLSR-$NLSR_VERSION.tar.gz
 ./waf configure
 ./waf 
 sudo ./waf install
