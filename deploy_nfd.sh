@@ -1,5 +1,11 @@
 #!/bin/bash
 
+NDN_CXX_VERSION=0.6.3
+NDN_NFD_VERSION=0.6.4
+WEB_SOCKET_PP_VERSION=0.7.0
+CHRONO_SYNC_VERSION=0.5.2
+NLSR_VERSION=0.4.3
+NDN_TOOLS_VERSION=0.6.2
 DEFAULT_DIR=~/Documents
 function cloneOrUpdate() {
     cd $DEFAULT_DIR
@@ -7,9 +13,10 @@ function cloneOrUpdate() {
     url=$2
     if [ -d $name ];then
         cd $name
-        git pull
     else
-        git clone $url
+        mkdir $name
+        curl -L $url > $name.tar.gz
+        tar xf $name.tar.gz -C $name --strip 1
         cd $name
     fi
 }
@@ -26,7 +33,7 @@ sudo apt-get install doxygen graphviz python-sphinx python-pip -y
 sudo pip install sphinxcontrib-doxylink sphinxcontrib-googleanalytics
 
 # install ndn-cxx
-cloneOrUpdate ndn-cxx https://github.com/named-data/ndn-cxx.git
+cloneOrUpdate ndn-cxx https://github.com/named-data/ndn-cxx/archive/ndn-cxx-$NDN_CXX_VERSION.tar.gz
 ./waf configure --enable-static
 ./waf
 sudo ./waf install
@@ -35,27 +42,29 @@ sudo ./waf install
 sudo apt-get install build-essential pkg-config libboost-all-dev \
                      libsqlite3-dev libssl-dev libpcap-dev -y
 sudo apt-get install doxygen graphviz python-sphinx -y
-cloneOrUpdate NFD https://github.com/named-data/NFD.git
-git submodule update --init
+cloneOrUpdate NFD https://github.com/named-data/NFD/archive/NFD-$NDN_NFD_VERSION.tar.gz
+mkdir websocketpp
+curl -L https://github.com/zaphoyd/websocketpp/archive/$WEB_SOCKET_PP_VERSION.tar.gz > websocket.tar.gz
+tar xf websocket.tar.gz -C websocketpp/ --strip 1
 ./waf configure
 ./waf
 sudo ./waf install
 
 # install ChronoSync
-cloneOrUpdate ChronoSync https://github.com/named-data/ChronoSync.git
+cloneOrUpdate ChronoSync https://github.com/named-data/ChronoSync/archive/$CHRONO_SYNC_VERSION.tar.gz
 ./waf configure
 ./waf
 sudo ./waf install
 
 # install NLSR
-cloneOrUpdate NLSR git clone https://github.com/named-data/NLSR.git
+cloneOrUpdate NLSR git clone https://github.com/named-data/NLSR/archive/NLSR-$NLSR_VERSION.tar.gz
 ./waf configure
 ./waf 
 sudo ./waf install
 
 # install ndn-tools
 sudo apt-get install libpcap-dev -y
-cloneOrUpdate ndn-tools https://github.com/named-data/ndn-tools.git
+cloneOrUpdate ndn-tools https://github.com/named-data/ndn-tools/archive/ndn-tools-$NDN_TOOLS_VERSION.tar.gz
 ./waf configure
 ./waf
 sudo ./waf install
