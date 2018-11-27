@@ -4,7 +4,7 @@ NDN_CXX_VERSION=0.6.3
 NDN_NFD_VERSION=0.6.4
 WEB_SOCKET_PP_VERSION=0.7.0
 CHRONO_SYNC_VERSION=0.5.2
-NLSR_VERSION=0.4.3
+NLSR_VERSION=0.4.4_que
 NDN_TOOLS_VERSION=0.6.2
 DEFAULT_DIR=~/Documents
 function cloneOrUpdate() {
@@ -28,7 +28,7 @@ function cloneOrUpdate() {
 #sudo apt-get install nfd -y
 
 # install ndn-cxx prerequesites
-sudo apt-get install build-essential libsqlite3-dev libboost-all-dev libssl-dev -y
+sudo apt-get install build-essential libsqlite3-dev libboost-all-dev libssl-dev curl tar -y
 sudo apt-get install doxygen graphviz python-sphinx python-pip -y
 sudo pip install sphinxcontrib-doxylink sphinxcontrib-googleanalytics
 
@@ -57,7 +57,7 @@ cloneOrUpdate ChronoSync https://github.com/named-data/ChronoSync/archive/$CHRON
 sudo ./waf install
 
 # install NLSR
-cloneOrUpdate NLSR https://github.com/named-data/NLSR/archive/NLSR-$NLSR_VERSION.tar.gz
+cloneOrUpdate NLSR https://github.com/SunnyQjm/NLSR/archive/NLSR-$NLSR_VERSION.tar.gz
 ./waf configure
 ./waf 
 sudo ./waf install
