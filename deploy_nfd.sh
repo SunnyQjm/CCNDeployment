@@ -7,7 +7,7 @@ function cloneOrUpdate() {
     url=$2
     if [ -d $name ];then
         cd $name
-        git update
+        git pull
     else
         git clone $url
         cd $name
