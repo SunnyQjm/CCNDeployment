@@ -36,6 +36,7 @@ sudo apt-get install build-essential pkg-config libboost-all-dev \
                      libsqlite3-dev libssl-dev libpcap-dev -y
 sudo apt-get install doxygen graphviz python-sphinx -y
 cloneOrUpdate NFD https://github.com/named-data/NFD.git
+git submodule update --init
 ./waf configure
 ./waf
 sudo ./waf install
