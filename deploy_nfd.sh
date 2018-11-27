@@ -49,6 +49,11 @@ tar xf websocket.tar.gz -C websocketpp/ --strip 1
 ./waf configure
 ./waf
 sudo ./waf install
+#check nfd.conf exists?
+if [ ! -f /usr/local/etc/ndn/nfd.conf ];then
+    cd /usr/local/etc/ndn
+    sudo cp nfd.conf.sample nfd.conf
+fi
 
 # install ChronoSync
 cloneOrUpdate ChronoSync https://github.com/named-data/ChronoSync/archive/$CHRONO_SYNC_VERSION.tar.gz
@@ -61,6 +66,15 @@ cloneOrUpdate NLSR https://github.com/SunnyQjm/NLSR/archive/NLSR-$NLSR_VERSION.t
 ./waf configure
 ./waf 
 sudo ./waf install
+#check nlsr.conf exists?
+if [ ! -f /usr/local/etc/ndn/nlsr.conf ];then
+    cd /usr/local/etc/ndn
+    sudo cp nlsr.conf.sample nlsr.conf
+fi
+#check /var/lib/nlsr exists?
+if [ ! -d /var/lib/nlsr ];then
+    sudo mkdir /var/lib/nlsr
+fi
 
 # install ndn-tools
 sudo apt-get install libpcap-dev -y
